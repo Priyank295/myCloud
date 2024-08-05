@@ -15,6 +15,7 @@ const { constants } = require("buffer");
 router.post("/upload", upload.single("txt"), async (req, res) =>
   uploadFile(req, res)
 );
+router.post("/rename", async (req, res) => renameFile(req, res));
 
 router.get("/getFiles", async (req, res) => getFiles(req, res));
 

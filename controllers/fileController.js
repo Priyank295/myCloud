@@ -44,8 +44,8 @@ exports.getFiles = async (req, res) => {
 
 exports.downloadFiles = async (req, res) => {
   try {
-    console.log(req.params.id);
-    const newfile = await gfs.files.findOne({
+    // console.log(req.params.id);
+    const newfile = gfs.files.findOne({
       _id: mongoose.Types.ObjectId(req.params.id),
     });
 
@@ -97,3 +97,5 @@ exports.previewFiles = async (req, res) => {
     res.status(500).json({ msg: "Error" });
   }
 };
+
+// exports.renameFile = async (req, res) => {};
